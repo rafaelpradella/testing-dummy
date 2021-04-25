@@ -2,13 +2,15 @@ import "@testing-library/jest-native/extend-expect";
 import "react-native";
 import { Text } from 'react-native';
 import React from 'react';
-import { Section } from './Section';
 import { render } from '@testing-library/react-native';
+
+import Section from './Section';
 
 const testTitle = "Olá Mundo!";
 
 it('Section has a acessible and matching title', () => {
-  const { getByA11yRole } = render(<Section title={testTitle} />);
+  const { getByA11yRole, debug } = render(<Section title={testTitle} />);
+  debug()
   const Header = getByA11yRole("header");
 
   expect(Header).toHaveTextContent(testTitle)

@@ -1,42 +1,28 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Section from "./src/components/Section";
 
-function HomeScreen({navigation}) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Section title="Home">
-            <Text>Seja bem-vindo ao app sample</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Details") }>
-              <Text>Mudar Rota</Text>
-            </TouchableOpacity>
-      </Section>
-      
-    </View>
-  );
-}
-
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
-
+import Home from "./src/screens/Home";
+import AccountDetails from "./src/screens/AccountDetails";
 
 const Stack = createStackNavigator();
+
+console.warn(Home, AccountDetails)
 
 function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+        />
+        <Stack.Screen 
+          name="Details" 
+          component={AccountDetails} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
