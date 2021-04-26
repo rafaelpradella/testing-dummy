@@ -22,4 +22,5 @@ it('Section renders children', () => {
   );
   const childContainer = queryByTestId("childContainer");
   expect(childContainer).toContainElement(queryByText(/child/i));
+  expect(childContainer).toBeTruthy();
 })
