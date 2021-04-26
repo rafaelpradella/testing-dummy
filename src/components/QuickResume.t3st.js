@@ -13,5 +13,8 @@ it('QuickResume navigates to Details', () => {
   );
 
   const QuickResumeBtn = queryByA11yRole("button");
-  expect(QuickResumeBtn).toBeDefined();
+
+  fireEvent("click");
+  
+  expect(QuickResumeBtn).
 })
