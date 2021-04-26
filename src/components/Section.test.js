@@ -1,4 +1,3 @@
-import "@testing-library/jest-native/extend-expect";
 import "react-native";
 import { Text } from 'react-native';
 import React from 'react';
