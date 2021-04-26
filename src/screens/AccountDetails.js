@@ -7,7 +7,7 @@ import {
 export default function AccountDetails({ route, navigation }) {
   return (
     <View>
-        <Text>Details</Text>
+        <Text>Muitos detalhes</Text>
     </View>
   );
 }

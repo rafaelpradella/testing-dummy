@@ -2,57 +2,35 @@ import React from 'react';
 import {
 	View,
 	Text,
-	useColorScheme,
 	StyleSheet
 } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import styled from "styled-components/native";
 
 export default function Section({children, title}){
-	const isDarkMode = useColorScheme() === 'dark';
 	return (
-	<View style={{ color: isDarkMode ? Colors.dark : Colors.light }}>
-	  <View style={styles.sectionContainer}>
-		<Text
-		  accessibilityRole="header"
-		  style={[
-			styles.sectionTitle,
-			{
-			  color: isDarkMode ? Colors.white : Colors.black,
-			},
-		  ]}>
-		  {title}
-		</Text>
-		<Text
-			testID="description"
-			style={[
-				styles.sectionDescription,
-				{
-				color: isDarkMode ? Colors.light : Colors.dark,
-				},
-			]}>
-		  {children}
-		</Text>
-	  </View>
-	</View>
+	<Container>
+		<SectionTitle accessibilityRole="header">
+			{title}
+		</SectionTitle>
+		<View
+			testID="childContainer"
+			style={{ width: "100%" }}
+		>
+			{children}
+		</View>
+	</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	sectionContainer: {
-		flex: 1,
-		marginTop: 32,
-		paddingHorizontal: 24,
-	},
-	sectionTitle: {
-		fontSize: 24,
-		fontWeight: '600',
-	},
-	sectionDescription: {
-		marginTop: 8,
-		fontSize: 18,
-		fontWeight: '400',
-	},
-	highlight: {
-		fontWeight: '700',
-	},
-  });
+const Container = styled.View`
+	display: flex;
+	margin-bottom: 32px;
+	width: 100%
+`;
+
+const SectionTitle = styled.Text`
+	color: #333333;
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 16px;
+`;

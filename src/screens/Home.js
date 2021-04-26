@@ -4,18 +4,25 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import styled from "styled-components/native";
 
+import QuickResume from "../components/QuickResume"
 import Section from "../components/Section"
 
 export default function Home({ route, navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Section title="Home" >
-        <Text>Seja bem-vindo ao app sample</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Details") }>
-          <Text>Mudar Rota</Text>
-        </TouchableOpacity>
+    <HomeScreen style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', padding: 24 }}>
+      <Section title="Olá, Rafael!" >
+        <QuickResume onPress={() => { navigation.navigate("Details")}} /> 
       </Section>
-    </View>
+      <Section title="Itens Recentes" />
+    </HomeScreen>
   );
 }
+
+const HomeScreen = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 24px
+`

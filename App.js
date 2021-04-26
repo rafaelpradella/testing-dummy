@@ -9,8 +9,6 @@ import AccountDetails from "./src/screens/AccountDetails";
 
 const Stack = createStackNavigator();
 
-console.warn(Home, AccountDetails)
-
 function App() {
   return (
     <NavigationContainer>
