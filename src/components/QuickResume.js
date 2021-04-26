@@ -26,10 +26,6 @@ export default function QuickResume({...props}){
 	return (
         <View>
             <LoadedQuickResume />
-            /*{ isLoading 
-                ? <LoadingResume />
-                : <LoadedQuickResume />
-            }*/
         </View>
 	);
 };
