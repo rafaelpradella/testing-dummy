@@ -12,7 +12,7 @@ export default function QuickResume({...props}){
     },[])
 
     const getResumeData = () => {
-        console.warn("Não carregou!");
+        //console.warn("Não carregou!");
     };
 
     const LoadedQuickResume = () => {
@@ -25,10 +25,11 @@ export default function QuickResume({...props}){
 
 	return (
         <View>
-            { isLoading 
+            <LoadedQuickResume />
+            /*{ isLoading 
                 ? <LoadingResume />
                 : <LoadedQuickResume />
-            }
+            }*/
         </View>
 	);
 };
